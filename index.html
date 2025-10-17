@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>https://alexcandra/almh.com</title>
+  <meta name="description" content="Website sederhana untuk alexcandra — portfolio / lirik / kontak" />
+  <style>
+    :root{
+      --bg:#0b0b0d;
+      --card:#0f1113;
+      --muted:#9aa3a8;
+      --accent:#7bd389;
+      --glass: rgba(255,255,255,0.03);
+      --maxw:1100px;
+      --mono:"Courier New", monospace;
+      --sans: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%;margin:0;background:linear-gradient(180deg,var(--bg),#071016);color:#e9eef0;font-family:var(--sans);-webkit-font-smoothing:antialiased}
+    .wrap{max-width:var(--maxw);margin:32px auto;padding:28px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{
+      width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#0f1722,#18323a);display:flex;align-items:center;justify-content:center;font-weight:700;
+      box-shadow: 0 6px 18px rgba(0,0,0,0.6);
+    }
+    .logo span{font-family:var(--mono);color:var(--accent);font-size:18px}
+    nav a{color:var(--muted);text-decoration:none;margin-left:14px;font-weight:600}
+    nav a:hover{color:var(--accent)}
+    main{display:grid;grid-template-columns:1fr 360px;gap:28px;margin-top:28px}
+    .card{background:linear-gradient(180deg,var(--card), rgba(255,255,255,0.02));padding:22px;border-radius:12px;box-shadow: 0 6px 24px rgba(2,6,10,0.6);border:1px solid rgba(255,255,255,0.02)}
+    .hero{padding:30px;border-radius:12px}
+    .title{font-size:28px;margin:0 0 8px}
+    .subtitle{color:var(--muted);margin:0 0 18px}
+    .cta{display:inline-block;background:var(--accent);color:#042a1a;padding:10px 14px;border-radius:10px;font-weight:700;text-decoration:none}
+    .right .avatar{width:100%;height:220px;border-radius:10px;background:linear-gradient(135deg,#07192a,#12313a);display:flex;align-items:center;justify-content:center;color:var(--accent);font-size:32px;font-family:var(--mono)}
+    .meta{display:flex;gap:12px;margin-top:14px;color:var(--muted);font-size:14px}
+    .section{margin-top:20px}
+    .lyrics pre{white-space:pre-wrap;font-family:var(--mono);line-height:1.6;font-size:15px;color:#e6efe9;background:var(--glass);padding:14px;border-radius:8px;border:1px solid rgba(255,255,255,0.02)}
+    footer{margin-top:36px;text-align:center;color:var(--muted);font-size:13px;padding:20px}
+    /* responsive */
+    @media (max-width:880px){
+      main{grid-template-columns:1fr; padding-bottom:40px}
+      .right{order:-1}
+    }
+
+    /* small flourish */
+    .pulse{
+      display:inline-block;
+      animation: pulse 2s infinite;
+    }
+    @keyframes pulse{
+      0%{transform:translateY(0)}
+      50%{transform:translateY(-4px)}
+      100%{transform:translateY(0)}
+    }
+
+    /* simple nav highlight when section in view (js toggled) */
+    nav a.active{color:var(--accent)}
+  </style>
+</head>
+<body>
+
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><span>@</span></div>
+        <div>
+          <div style="font-weight:800;font-size:18px">@alexcandra</div>
+          <div style="color:var(--muted);font-size:13px;margin-top:4px">Pembuat konten • Pecinta musik • Programmer</div>
+        </div>
+      </div>
+
+      <nav>
+        <a href="#home" data-target="home" class="active">Home</a>
+        <a href="#lirik" data-target="lirik">Lirik</a>
+        <a href="#about" data-target="about">About</a>
+        <a href="#contact" data-target="contact">Contact</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="card hero">
+        <h1 class="title">Halo — aku <span style="color:var(--accent)">alexcandra</span></h1>
+        <p class="subtitle">Selamat datang di website gw ngabb. Di sini gw simpan link, proyek, dan info kontak.</p>
+
+        <a class="cta" href="#lirik">Lihat Lirik</a>
+
+        <div class="section">
+          <h3 style="margin:0 0 10px">Highlight</h3>
+          <div style="display:flex;gap:10px;flex-wrap:wrap">
+            <div style="background:var(--glass);padding:10px;border-radius:8px;font-weight:700">Lirik</div>
+            <div style="background:var(--glass);padding:10px;border-radius:8px;font-weight:700">Proyek</div>
+            <div style="background:var(--glass);padding:10px;border-radius:8px;font-weight:700">Kontak</div>
+          </div>
+        </div>
+
+        <div class="section">
+          <h3 style="margin:0 0 10px">Tentang singkat</h3>
+          <p style="color:var(--muted);margin:0">Ini template sederhana. Ubah isinya lewat editor teks — ganti nama, ganti lirik di bagian Lirik, atau sambungkan ke hosting.</p>
+        </div>
+      </section>
+
+      <aside class="right">
+        <div class="card">
+          <div class="avatar">@</div>
+          <div class="meta">
+            <div>Followers: <strong style="color:var(--accent)">--</strong></div>
+            <div>Posts: <strong style="color:var(--accent)">--</strong></div>
+          </div>
+
+          <div class="section">
+            <h4 style="margin:8px 0">Hubungi</h4>
+            <div style="color:var(--muted);font-size:14px">email: <span style="color:#ddd">dekkball432@gmail.com</span></div>
+            <div style="color:var(--muted);font-size:14px;margin-top:6px">IG: <span style="color:#ddd">@iqbal.___21   & alimah_____</span></div>
+          </div>
+
+        </div>
+      </aside>
+    </main>
+
+    <section id="lirik" class="card section">
+      <h3 style="margin-top:0">Lirik Pilihan</h3>
+      <div class="lyrics">
+        <pre id="lyricsBox">
+AKU SAYANG ALIMAH
+        </pre>
+      </div>
+      <div style="margin-top:14px;color:var(--muted)">jngan lupa ibadah nya ngabb
+    </section>
+
+    <section id="about" class="card section">
+      <h3>Tentang</h3>
+      <p style="color:var(--muted)">Sedikit tentang aku: suka ngoding, musik, dan membuat konten. website sederhana tanpa ribet — ini contohnya.</p>
+    </section>
+
+    <section id="contact" class="card section">
+      <h3>Contact</h3>
+      <p style="color:var(--muted)">Ingin kolaborasi? Kirim email ke <strong>dekkball432@gmail.com</strong> atau DM di Instagram <strong>iqbal.___21</strong>.</p>
+    </section>
+
+    <footer>
+      <div>© <span id="year"></span> alexcandra — Built with ♥</div>
+    </footer>
+  </div>
+
+  <script>
+    // small scripts: fill year, simple nav scroll spy
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    // smooth scroll + active nav
+    const links = document.querySelectorAll('nav a');
+    links.forEach(a=>{
+      a.addEventListener('click', e=>{
+        e.preventDefault();
+        const id = a.getAttribute('href').slice(1);
+        document.getElementById(id).scrollIntoView({behavior:'smooth',block:'start'});
+      });
+    });
+
+    // simple scroll spy to set active nav item
+    const sections = ['home','lirik','about','contact'].map(id=>document.getElementById(id));
+    window.addEventListener('scroll', ()=>{
+      const mid = window.scrollY + window.innerHeight/3;
+      let current = 'home';
+      for(const s of sections){
+        if(s && s.offsetTop <= mid) current = s.id;
+      }
+      links.forEach(a=>a.classList.toggle('active', a.getAttribute('data-target')===current));
+    });
+  </script>
+</body>
+</html>
